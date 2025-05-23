@@ -1,13 +1,11 @@
-export default function Navbar() {
-    return(
-        <div className="navbar">
-            <div className="navContent">
-                <ul className="navList">
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    )
+export default function Navbar({ isOpen }) {
+  return (
+    <div className={`navcontainer ${isOpen ? 'active' : 'hidden'}`}>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  );
 }

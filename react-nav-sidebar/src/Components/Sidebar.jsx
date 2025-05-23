@@ -1,13 +1,9 @@
-export default function Sidebar() {
-    return(
-        <div className="sidebarNav">
-            <div className="sidebarNavContent">
-                <ul className="SidebarNavList">
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    )
+export default function Sidebar({ isOpen }) {
+  return (
+    <div className={`sidebarNav ${isOpen ? 'active' : 'hidden'}`}>
+      <a href="#">Dashboard</a>
+      <a href="#">Settings</a>
+      <a href="#">Logout</a>
+    </div>
+  );
 }

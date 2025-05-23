@@ -1,1 +1,141 @@
-@import "tailwindcss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.topnav {
+  background-color: #f4f4f4;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #ccc;
+  z-index: 1000;
+  top: 0;
+}
+
+
+.navcontainer {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navcontainer ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+.navcontainer.hidden {
+  display: none !important;
+}
+.navcontainer.active {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sidebarNav {
+  position: fixed;
+  top: 85px;
+  left: 0;
+  width: 220px;
+  height: calc(100% - 60px);
+  background-color: #e5e5e5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+.sidebarNav.active {
+  transform: translateX(0);
+}
+
+.sidebarNav a,
+.sidebarNav li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #333;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .sidebarNav {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    top: 124px;
+  }
+
+  .sidebarNav.active {
+    transform: translateX(0);
+  }
+  .topnav {
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+    align-self: flex-start
+  }
+
+  .navcontainer {
+    display: none;
+  }
+
+  .navcontainer.active {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 430px) {
+    .sidebarNav {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    top: 168px;
+  }
+}
